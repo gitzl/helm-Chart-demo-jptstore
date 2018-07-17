@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jpt-test
+  namespace: ns-team-1-env-2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jpt-test
+    spec:
+      containers:
+        - name: jpt-test
+          image: registry.cn-hangzhou.aliyuncs.com/mckj/jptstrore
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              hostPort: 8083
+              protocol: TCP

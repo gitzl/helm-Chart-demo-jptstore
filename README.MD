@@ -1,4 +1,4 @@
-#jptstore：example chart
+# jptstore：example chart
 
 * install
 

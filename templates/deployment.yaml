@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: jpt-test
+  name: {{.Chart.Name}}
   namespace: ns-team-1-env-2
 spec:
   replicas: 1
@@ -12,8 +12,8 @@ spec:
     spec:
       containers:
         - name: jpt-test
-          image: registry.cn-hangzhou.aliyuncs.com/mckj/jptstrore
-          imagePullPolicy: Always
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
               hostPort: 8083

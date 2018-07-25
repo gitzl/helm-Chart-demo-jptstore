@@ -1,0 +1,4 @@
+image:
+  repository: registry.cn-hangzhou.aliyuncs.com/mckj/jptstrore
+  tag: latest
+  pullPolicy: Always
